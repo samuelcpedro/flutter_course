@@ -17,6 +17,9 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  // the _ character is to define something that will only be used inside of this class
+  List<String> _products = ['Food Tester'];
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -34,13 +37,16 @@ class _MyAppState extends State<MyApp> {
                     child: Text('Add Product'),
                   ),
                 ),
-                Card(
-                  child: Column(
-                    children: <Widget>[
-                      Image.asset('assets/food.jpg'),
-                      Text('Food Paradise')
-                    ],
-                  ),
+                Column(
+                  children: _products.map((element) =>
+                      Card(
+                        child: Column(
+                          children: <Widget>[
+                            Image.asset('assets/food.jpg'),
+                            Text(element)
+                          ],
+                        ),
+                      )).toList(),
                 )
               ],
             )));
