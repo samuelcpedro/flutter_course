@@ -9,10 +9,13 @@ class ProductManager extends StatefulWidget {
   final String startingProduct;
 
   //
-  ProductManager(this.startingProduct);
+  ProductManager(this.startingProduct) {
+    print('[ProductManager Widget] Constructor');
+  }
 
   @override
   State<StatefulWidget> createState() {
+    print('[ProductManager Widget] createState');
     return _ProductManagerState();
   }
 }
@@ -26,6 +29,7 @@ class _ProductManagerState extends State<ProductManager> {
   //
   @override
   void initState() {
+    print('[ProductManager Widget] initState');
     /**
      * In the last lecture, initState() was introduced.
      * You learned that you have to call super.initState() in there and that
@@ -43,9 +47,16 @@ class _ProductManagerState extends State<ProductManager> {
     // for the first time, that code will already have been executed.
     _products.add(widget.startingProduct);
   }
-  
+
+  @override
+  void didUpdateWidget(ProductManager oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    print('[ProductManager Widget] didUpdateWidget');
+  }
+
   @override
   Widget build(BuildContext context) {
+    print('[ProductManager Widget] build');
     return Column(children: [
       Container(
         margin: EdgeInsets.all(10.0),

@@ -7,20 +7,24 @@ class Products extends StatelessWidget {
 
   // constructr and accept a list of products
   // and storage in a property
-  Products(this.products);
+  Products(this.products) {
+    // will execute when product widget is created
+    print('[Products Widget] Constructor');
+  }
 
   @override
   Widget build(BuildContext context) {
+    print('[Products Widget] build()');
     return Column(
       children: products
           .map((element) => Card(
-                child: Column(
-                  children: <Widget>[
-                    Image.asset('assets/food.jpg'),
-                    Text(element)
-                  ],
-                ),
-              ))
+        child: Column(
+          children: <Widget>[
+            // Image.asset('assets/food.jpg'),
+            Text(element)
+          ],
+        ),
+      ))
           .toList(),
     );
   }
