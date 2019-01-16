@@ -7,7 +7,11 @@ class Products extends StatelessWidget {
 
   // constructr and accept a list of products
   // and storage in a property
-  Products(this.products) {
+  // Star with a empty list
+  //   this.products = const []
+  // If optional
+  //   [this.products = const []]
+  Products([this.products = const []]) {
     // will execute when product widget is created
     print('[Products Widget] Constructor');
   }

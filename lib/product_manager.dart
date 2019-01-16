@@ -9,7 +9,7 @@ class ProductManager extends StatefulWidget {
   final String startingProduct;
 
   //
-  ProductManager(this.startingProduct) {
+  ProductManager({this.startingProduct = 'Sweets Tester'}) {
     print('[ProductManager Widget] Constructor');
   }
 
